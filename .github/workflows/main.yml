@@ -1,0 +1,56 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Utils for workflow
+        uses: madBabel/get-run-id-of-wf-action@v1
+
+      - name: Utils for workflow
+        uses: madBabel/get-run-id-of-wf-action@v1
+
+      - name: Utils for workflow
+        uses: madBabel/get-run-id-of-wf-action@v1
+
+      - name: PR commit summary
+        uses: nejcm/pr-summary-github-action@v1.1.0
+
+      - name: Automatic flag clean up for FeaturesFlow 
+        uses: baginskijakub/features-flow-bot@v1.0.0
+
+      - name: Conventional Commit PR Title Validator
+        uses: lab42/ccu-action@v0.1.7
+
+      - name: ilert deployment events
+        uses: iLert/ilert-deployment-events-action@1.0.1
+
+      - name: Remove QueryDesk Database
+        uses: devhub-tools/querydesk-remove-action@v1.0.0
+
+      - name: GitOps Pull Request Environment
+        uses: cedricve/gitops-pullrequest-environment@v1.0.0
+
+      - name: Delegate Compute
+        uses: Abuchtela/assistive-pricing@v1.0.2
+
+      - name: Update License Year
+        uses: tqer39/update-license-year@v1.0.0
+
+      - name: Utils for workflow
+        uses: madBabel/get-run-id-of-wf-action@v1
+
+      - name: pytestresultsdiff
+        uses: zacharyburnett/pytestresultsdiff@0.4.0
